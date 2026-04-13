@@ -5,31 +5,19 @@
     <meta name="keywords" content="Real Madrid, futbal, štadión, Laliga">
     <meta name="author" content="Timur Molnár">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
     <title>Real Madrid</title>
 </head>
 <body>
-<header>
-    <!-- Navigacia -->
-    <nav>
-        <div class = "menu">
-            <img height="50" src="/img/real-madrid-logo-png-24.png" alt="logo">
-            <div class="menu-jojo">
-                <a href="../index.html">Domov</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../onas.html">O nás</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../galeria.html">Galéria</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../kontakt.html">Kontakt</a>
-            </div>     
-        </div>
-    </nav>
-</header>
+
+<?php
+$file_path = "parts/header.php"; 
+if(!include($file_path)) {
+  echo"Failed to include $file_path";
+} 
+?>
+
 <!-- Kontakt -->
 <div class="main-content">
 <form onsubmit="return validateForm()">

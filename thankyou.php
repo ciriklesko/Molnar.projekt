@@ -6,33 +6,19 @@
     <meta name="author" content="Timur Molnár">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Real Madrid</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-    <!-- Navigacia -->
-    <nav>
-        <div class = "menu">
-            <img height="50" src="/img/real-madrid-logo-png-24.png" alt="logo">
-            <div class="menu-jojo">
-                <a href="../index.html">Domov</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../onas.html">O nás</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../galeria.html">Galéria</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../kontakt.html">Kontakt</a>
-            </div>     
-        </div>
-    </nav>
-</header>
+<?php
+$file_path = "parts/header.php"; 
+if(!include($file_path)) {
+  echo"Failed to include $file_path";
+} 
+?>
 <div class="ty">
 
 <h1>Dakujeme za vašu správu</h1>
-<img src="../img/ty.png" alt="">
+<img src="img/ty.png" alt="">
 
 
 </div>
