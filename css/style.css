@@ -1,0 +1,393 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    padding-top: 30px;
+    font-weight: 200;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Header */
+.menu{
+    align-items:center;
+    justify-content: center;
+    display: flex;
+    gap: 30px;
+    height: 60px;
+}
+
+header{
+    background-color:gold;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 60px;
+    width: 100%;
+}
+header a{
+    text-decoration: none;
+    color:black;
+    padding: 19.5px;
+    text-transform: uppercase;
+}
+header a:hover{
+    background-color:white;
+}
+.banner{
+    background-image: url("/img/baner.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 700px;
+    color: white;
+    line-height: 0px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+/* Galeria */
+.gallery {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+    margin-bottom: 60px;
+    font-family: Arial, sans-serif;
+}
+
+/* Nadpisy */
+.nadpis{
+    font-weight: 500;
+    text-align: center;
+    font-size: 30px;
+}
+
+.nadpistb{
+    font-weight: 500;
+    color: #212529;
+    text-align: center;
+    font-size: 30px;
+}
+.nadpisk{
+    text-align: center;
+}
+
+/* Karty */
+.card {
+    width: 410px;
+    text-align: center;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background: white;
+}
+.card img {
+    width: 100%;
+}
+
+.list{
+  list-style: none;
+}
+.fakt{
+    justify-content: center;
+}
+/* Tabulka */
+table {
+    border-collapse: collapse;
+    align-items: center;
+    width: 70%;
+    margin: auto;
+    margin-bottom: 35px;
+    background: transparent;
+}
+thead{
+    background-color: #FFD700 ;
+}
+table th, table td {
+    border: 1px solid whitesmoke;
+    padding: 8px;
+    text-align: center;
+}
+
+.content{
+    text-align: center;
+}
+/* Formulare */
+.gdpr { 
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+form {
+    padding-top: 100px;
+    align-items: center;
+    width: 400px;
+    margin: auto;
+}
+form input:not([type="checkbox"]), 
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border: 1px solid #bbb;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.btn {
+    text-align: center;
+    background: gold;
+    border: none;
+    padding: 10px 20px;
+    color: black;
+    cursor: pointer;
+    border-radius: 3px;
+    margin: 20px auto 40px auto;
+    display: block;
+}
+
+
+/* Nastavenie vysky pre carousel */
+.carousel-item img {
+    width: 60%;
+    max-height: 550px;   
+    object-fit: cover;   
+}
+
+/* Zmena farby pre akordeon */
+.accordion{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.accordion-item {
+    border: 1px solid #d4af37 !important;
+}
+.accordion-button:not(.collapsed) {
+    background-color: gold !important; 
+    color: black !important;
+    box-shadow: none !important;         
+}
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.5) !important; 
+}
+
+.oficialna{
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.oficialna a{   
+  width: 10px;     
+  margin-left: auto; 
+  margin-right: 0;
+  padding: 10px 20px;
+  background-color: gold;
+  border:#bbb;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.oficialna a:hover{   
+  background-color: black;
+  color: white;
+}
+.oficialna button{
+  text-align: center;       
+  margin-left: auto; 
+  margin-right: 0;
+  padding: 15px 20px;
+  background-color: gold;
+  color: black;
+  border-radius: 5px;
+  text-decoration: none;
+  border: none;
+}
+.oficialna button:hover{   
+  background-color: black;
+  color: white;
+}
+/* Footer */
+footer {
+    width: 100%;
+    background-color: gold;
+    padding: 20px 0;
+    text-align: center;
+    margin: 0;
+}
+.copy{
+    color: black;
+}
+.footer div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.footer {
+  color: black;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 120px;
+  justify-content: center;
+  width: 100%;   
+}
+.tlacitko{
+  width: 10px;     
+  margin-left: auto; 
+  margin-right: 0;
+  padding: 10px 20px;
+  background-color: gold;
+  border: solid;
+  border-radius: 1px;
+  border-color: black;
+  color: black;
+  text-decoration: none;
+}
+.tlacitko:hover{   
+  background-color: black;
+  color: white;
+}
+/* Cookies lista */
+.cookies-box {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #212529;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    display: none; 
+}
+.cookies-box button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background: gold;
+    border: none;
+    cursor: pointer;
+}
+.ty{
+    padding-top: 200px;
+    text-align: center;
+    padding-bottom: 280px;
+}
+@media (max-width: 600px) {
+    header {
+        height: auto;
+    }
+
+    .menu {
+        flex-direction: row;
+        gap: 2px;
+        padding: 10px 0;
+        padding-left: 0;
+        padding-right: 30px;
+    }
+
+    header a {
+        padding: 10px;
+    }
+
+    .banner {
+        height: 450px;
+       
+        padding: 20px;
+    }
+
+    .banner h1 {
+      
+        font-size: 28px;
+    }
+    .banner p {
+        text-align: center;
+        font-size: 16px;
+    }
+
+    
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 90%;
+    }
+
+   
+    table {
+        width: 95%;
+        font-size: 14px;
+    }
+
+    
+    .footer {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    
+    form {
+        width: 60%;
+        padding-top: 50px;
+    }
+
+   
+.carousel-item img {
+        width: 90%;
+        max-height: 350px;
+    }
+    
+
+}
+
+@media (min-width: 600px) and (max-width: 992px) {
+
+    .menu {
+        gap: 20px;
+    }
+
+    .banner {
+        height: 550px;
+    }
+
+    .card {
+        width: 45%;
+    }
+
+    .gallery {
+        flex-wrap: wrap;
+    }
+
+    table {
+        width: 85%;
+    }
+
+    form {
+        width: 65%;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+
+    .menu {
+        gap: 25px;
+    }
+
+    .card {
+        width: 350px;
+    }
+
+    table {
+        width: 75%;
+    }
+}
