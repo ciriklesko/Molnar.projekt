@@ -15,7 +15,7 @@ function validateForm() {
         return false;
     }
 
-    window.location.href = "thankyou.html";
+    
     return false;
 
 }

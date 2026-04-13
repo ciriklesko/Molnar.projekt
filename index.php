@@ -18,7 +18,6 @@ if(!include($file_path)) {
   echo"Failed to include $file_path";
 } 
 ?>
-
 <div class="main-content">
 <!-- Baner -->
 <div class="banner">
