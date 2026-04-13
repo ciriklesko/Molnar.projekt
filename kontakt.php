@@ -20,16 +20,16 @@ if(!include($file_path)) {
 
 <!-- Kontakt -->
 <div class="main-content">
-<form onsubmit="return validateForm()">
+<form onsubmit="return validateForm()" method="post" action="db/spracovanieFormulara.php">
     <h1 class="nadpisk">Kontaktujte Nás</h1>
     <label for="name">Meno:</label>
-    <input type="text" id="name">
+    <input type="text" id="meno" name="meno">
 
     <label for="email">Email:</label>
-    <input type="email" id="email">
+    <input type="email" id="email" name="email">
 
     <label for="message">Správa</label>
-    <textarea name="message" id="message"></textarea>
+    <textarea id="sprava" name="sprava"></textarea>
 
     <label class="gdpr">
         <input type="checkbox" id="gdpr">
