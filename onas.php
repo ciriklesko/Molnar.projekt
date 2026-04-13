@@ -5,8 +5,8 @@
     <meta name="keywords" content="Real Madrid, futbal, štadión, Laliga">
     <meta name="author" content="Timur Molnár">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
-    <script src="../js/app.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js"></script>
    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
@@ -18,26 +18,14 @@
     <title>Real Madrid</title>
 </head>
 <body>
-   <header class="fixed-top">
-    <!-- Navigacia -->
-     <nav>
-        <div class = "menu">
-          <img height="50" src="/img/real-madrid-logo-png-24.png" alt="logo">
-            <div class="menu-jojo">
-                <a href="../index.html">Domov</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../onas.html">O nás</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../galeria.html">Galéria</a>
-            </div>
-            <div class="menu-jojo">
-                <a href="../kontakt.html">Kontakt</a>
-            </div>     
-        </div>
-    </nav>
-</header>
+
+<?php
+  $file_path = "parts/header.php"; 
+  if(!include($file_path)) {
+  echo"Failed to include $file_path";
+  } 
+?>
+
 <!-- Základne informacie -->
 <div class="main-content">
     <article class="container text-center">
@@ -57,21 +45,21 @@
   <div class="carousel-inner">
     <h3 class="text-center">Aj štadión si počas rokov prešiel rekonštrukciou</h3>
     <div class="carousel-item active">
-      <img src="../img/predrekonstrukciou.jpg" class="d-block w-100" alt="...">
+      <img src="img/predrekonstrukciou.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Štadión pred rekonštrukciou</h5>
         <p>2018/2019</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="../img/pocas.jpg" class="d-block w-100" alt="...">
+      <img src="img/pocas.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Štadión počas rekonštrukcie</h5>
         <p>2021</p>
       </div>
     </div>
     <div class="carousel-item">
-      <img src="../img/porekonstrukcii.jpg" class="d-block w-100" alt="...">
+      <img src="img/porekonstrukcii.jpg" class="d-block w-100" alt="...">
       <div class="carousel-caption d-none d-md-block">
         <h5>Štadión po rekonštrukcii</h5>
         <p>2024</p>
@@ -136,25 +124,12 @@
 </div>
 
 <!-- Footer -->
-<footer>
-    <div class="footer">
-        <div>
-            <p><a href="mailto:presidencia@corp.realmadrid.com">E-mail</a></p>
-            <p><a href="tel:+421-950-521-324">Tel: +421 950 521 324</a></p>
-        </div>
-        <div>
-            <p>Dátum založenia</p>
-            <p>1.12.2025</p>
-        </div>
-        <div>
-            <p>Oficiálna stránka</p>
-            <p><a class="tlacitko" href="https://www.realmadrid.com/en-US">Klik</a></p>
-        </div>
-        <div>
-            <p class="copy">© 2025 Real Madrid fan web</p>
-        </div>
-    </div>
-</footer>
+<?php
+$file_path = "parts/footer.php"; 
+if(!include($file_path)) {
+  echo"Failed to include $file_path";
+} 
+?>
  <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
