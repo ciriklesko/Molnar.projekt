@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -78,49 +79,64 @@
 </div>
     <!-- Akordeon -->
     <!-- Najlepsia sezona -->
-<div class="accordion accordion-flush container col-5 " id="accordionFlushExample">
-      <h2 class="text-center">Sezóny a úspechy</h2>
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-        Najlepšia sezóna
-      </button>
-    </h2>
-    <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">Najlepšia sezóna Realu Madrid je často považovaná za sezónu 1957/1958, kedy klub vyhral domácu ligu (La Liga) aj prestížnu Ligu majstrov UEFA. V poslednom čase bola tiež veľmi úspešná sezóna 2016/2017, kedy sa stal prvým klubom, ktorý dokázal dvakrát po sebe zvíťaziť v Lige majstrov a zároveň vyhral aj domácu ligu a iné súťaže. </div>
-    </div>
-  </div>
-    <!-- Najhorsia sezona -->
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-        Najhoršia sezóna
-      </button>
-    </h2>
-    <div id="flush-collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body ">
-        Najhoršia sezóna Realu Madrid je sporná, ale sezóna 2018/2019 je často označovaná za jednu z najhorších v nedávnej histórii kvôli slabým výkonom a štatistikám. V tejto sezóne sa tím trápil v La Lige aj v Lige majstrov a dosiahol najhoršiu bilanciu najazdených kilometrov v lige od roku 2009, čo bol len druhýkrát, čo tím klesol pod 100 000 metrov. 
-      </div>
-    </div>
-  </div>
-  <!-- List uspechov -->
-  <div class="accordion-item">
-    <h2 class="accordion-header">
-      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-        Najväčšie úspechy klubu
-      </button>
-    </h2>
-    <div id="flush-collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-      <div class="accordion-body">
-        <ul>
-          <li class="list">14x Liga Majstrov</li>
-          <li class="list">20x Copa del Rey</li>
-          <li class="list">35x La Liga</li>
-        </ul> 
-      </div>
-    </div>
-  </div>
-  
+<?php
+include_once "classes/qna.php";
+use otazkyodpovede\QnA;
+
+$qna = new QnA();
+
+// Upozornenie: Táto funkcia zakaždým zmaže a znova naplní tabuľku. 
+// V produkcii ju stačí spustiť raz a potom zakomentovať.
+$qna->insertQnA(); 
+
+// Vytiahnutie dát z databázy do premennej
+$faqs = $qna->getQnA();
+?>
+
+<h2 class="text-center mt-5 mb-4">Často kladené otázky</h2>
+<div class="accordion custom-accordion mx-auto" id="faqAccordion">
+
+    <?php if (!empty($faqs)): ?>
+        <?php foreach ($faqs as $index => $faq): 
+            // Určíme, či ide o prvý prvok (bude otvorený)
+            $isFirst = ($index === 0);
+            
+            // Vytvoríme unikátne ID pre každý akordeón
+            $headingId = "heading" . $index;
+            $collapseId = "collapse" . $index;
+            
+            // Tvoja pôvodná podmienka - pridať 'mb-5' na posledný element
+            $isLast = ($index === count($faqs) - 1);
+        ?>
+            <div class="accordion-item <?php echo $isLast ? 'mb-5' : ''; ?>">
+                <h2 class="accordion-header" id="<?php echo $headingId; ?>">
+                    <button class="accordion-button <?php echo $isFirst ? '' : 'collapsed'; ?>" 
+                            type="button" 
+                            data-bs-toggle="collapse" 
+                            data-bs-target="#<?php echo $collapseId; ?>" 
+                            aria-expanded="<?php echo $isFirst ? 'true' : 'false'; ?>" 
+                            aria-controls="<?php echo $collapseId; ?>">
+                        
+                        <?php echo htmlspecialchars($faq['otazka']); ?>
+                        
+                    </button>
+                </h2>
+                <div id="<?php echo $collapseId; ?>" 
+                     class="accordion-collapse collapse <?php echo $isFirst ? 'show' : ''; ?>" 
+                     aria-labelledby="<?php echo $headingId; ?>" 
+                     data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        
+                        <?php echo htmlspecialchars($faq['odpoved']); ?>
+                        
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p class="text-center">Momentálne tu nie sú žiadne otázky.</p>
+    <?php endif; ?>
+
 </div>
 
 <!-- Footer -->
